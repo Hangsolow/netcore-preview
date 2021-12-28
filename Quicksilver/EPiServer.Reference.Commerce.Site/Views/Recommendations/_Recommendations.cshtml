@@ -3,6 +3,6 @@
 @foreach (var product in Model.Products)
 {
     <div class="jsProductTile product-row__tile" data-recommendation-id="@product.RecommendationId">
-        @Html.Partial("_Product", product.TileViewModel)
+        @await Html.PartialAsync("_Product", product.TileViewModel)
     </div>
 }

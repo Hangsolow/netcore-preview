@@ -3,7 +3,7 @@
     <div class="row myPage">
         @if (Model.CurrentPage != null)
         {
-            @Html.Partial("_CmsNavigation", Model.CurrentPage)
+            @await Html.PartialAsync("_CmsNavigation", Model.CurrentPage)
         }
 
         <div class="col-xs-12 col-md-9">

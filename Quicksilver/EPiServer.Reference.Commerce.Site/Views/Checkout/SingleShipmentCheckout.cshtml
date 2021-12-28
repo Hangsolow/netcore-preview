@@ -92,13 +92,13 @@
     <h2>@Html.Translate("/Checkout/Payment/Heading")</h2>
     <div class="row section-box">
         <div id="billingAddressContainer" class="col-md-6 col-xs-12">
-            @{ Html.RenderPartial("BillingAddress", Model); }
+            @{ await Html.RenderPartialAsync("BillingAddress", Model); }
         </div>
     </div>
     <h2>@Html.Translate("/Checkout/Shipment/Heading")</h2>
     <div class="row section-box">
         <div class="col-xs-12">
-            @{ Html.RenderPartial("SingleShippingAddress", Model); }
+            @{ await Html.RenderPartialAsync("SingleShippingAddress", Model); }
         </div>
     </div>
 

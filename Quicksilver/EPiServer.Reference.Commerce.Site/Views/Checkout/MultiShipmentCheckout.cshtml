@@ -83,7 +83,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <h2>Shipment @shipmentIndex of @Model.Shipments.Count</h2>
-                                            @{ Html.RenderPartial("_AddressSummaryLine", Model.Shipments[shipmentIndex - 1].Address); }
+                                            @{ await Html.RenderPartialAsync("_AddressSummaryLine", Model.Shipments[shipmentIndex - 1].Address); }
                                         </div>
                                     </div>
 
@@ -177,7 +177,7 @@
         <h2>@Html.Translate("/Checkout/Payment/Heading")</h2>
         <div class="row section-box">
             <div id="billingAddressContainer" class="col-md-6 col-xs-12">
-                @{ Html.RenderPartial("BillingAddress", Model); }
+                @{ await Html.RenderPartialAsync("BillingAddress", Model); }
             </div>
             <div class="col-md-6 col-xs-12">
                 @await Component.InvokeAsync("Payment")

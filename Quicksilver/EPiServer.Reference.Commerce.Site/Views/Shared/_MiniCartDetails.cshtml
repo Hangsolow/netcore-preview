@@ -14,7 +14,7 @@
                     @{
                         if (Model.Shipments.Count() > 1)
                         {
-                            Html.RenderPartial("_AddressSummaryLine", shipment.Address);
+                            await Html.RenderPartialAsync("_AddressSummaryLine", shipment.Address);
                         }
                     }
                     <ul class="list-unstyled">

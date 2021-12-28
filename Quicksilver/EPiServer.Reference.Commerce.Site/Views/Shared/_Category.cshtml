@@ -2,5 +2,5 @@
 
 @foreach (var productModel in Model)
 {
-    Html.RenderPartial("_ProductTile", productModel);
+    await Html.RenderPartialAsync("_ProductTile", productModel);
 }

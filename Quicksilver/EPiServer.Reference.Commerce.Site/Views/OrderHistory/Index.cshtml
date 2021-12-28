@@ -5,7 +5,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        @Html.Partial("_CmsNavigation", Model.CurrentPage)
+        @await Html.PartialAsync("_CmsNavigation", Model.CurrentPage)
         <div class="col-xs-12 col-sm-9">
             <div class="section-box">
                 <h2>@Html.PropertyFor(x => x.CurrentPage.Name)</h2>
@@ -33,7 +33,7 @@
 
                         @foreach (var shippingAddress in order.ShippingAddresses)
                         {
-                            @Html.Partial("_Address", shippingAddress)
+                            @await Html.PartialAsync("_Address", shippingAddress)
                         }
 
                     </div>

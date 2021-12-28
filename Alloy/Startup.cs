@@ -60,7 +60,7 @@ namespace EPiServer.Templates.Alloy.Mvc
                 app.UseDeveloperExceptionPage();
                 app.UseMiddleware<AdministratorRegistrationPageMiddleware>();
             }
-
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();

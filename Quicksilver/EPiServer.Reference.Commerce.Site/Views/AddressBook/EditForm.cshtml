@@ -1,13 +1,13 @@
-﻿@model EPiServer.Reference.Commerce.Site.Features.AddressBook.ViewModels.AddressViewModel
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model EPiServer.Reference.Commerce.Site.Features.AddressBook.ViewModels.AddressViewModel
 
 <div class="container-fluid">
     <div class="row myPage">
         @if (Model.CurrentPage != null)
         {
-            @Html.Partial("_CmsNavigation", Model.CurrentPage)
+            <partial name="_CmsNavigation" model="Model.CurrentPage" />
         }
-
-       @Html.Partial("EditAddress", Model)
+        <partial name="EditAddress" model="Model" />
 
     </div>
 </div>

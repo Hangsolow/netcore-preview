@@ -84,7 +84,7 @@
                                 <div class="well quicksilver-well">
 
                                     <h4>@Html.Translate("/OrderConfirmation/ShippingAddress")</h4>
-                                    @Html.Partial("_Address", shipment.Address)
+                                    @await Html.PartialAsync("_Address", shipment.Address)
                                 </div>
                             </div>
                         </div>
@@ -131,12 +131,12 @@
                         <tr>
                             <td style="vertical-align:top; width:50%;">
                                 <h4>@Html.Translate("/OrderConfirmation/BillingDetails")</h4>
-                                @Html.Partial("_Address", Model.BillingAddress)
+                                @await Html.PartialAsync("_Address", Model.BillingAddress)
                             </td>
                             <td style="vertical-align:top; width:50%;">
                                 @foreach (var payment in Model.Payments)
                                 {
-                                    Html.RenderPartial("_" + payment.PaymentMethodName + "Confirmation", payment);
+                                    await Html.RenderPartialAsync("_" + payment.PaymentMethodName + "Confirmation", payment);
                                 }
                             </td>
                         </tr>

@@ -1,7 +1,7 @@
 ﻿@model EPiServer.Reference.Commerce.Site.Features.AddressBook.ViewModels.AddressCollectionViewModel
 <div class="container-fluid">
     <div class="row myPage">
-        @Html.Partial("_CmsNavigation", Model.CurrentPage)
+        <partial name="_CmsNavigation" model="Model.CurrentPage" />
         <div class="col-xs-12 col-md-9 jsAddressBook">
             <div class="row mypages-header">
                 <div class="col-xs-12 col-md-9">
@@ -29,7 +29,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
-                                    @Html.Partial("_Address", address)
+                                    <partial name="_Address" model="address" />
                                     @if (!(bool)ViewData["IsReadOnly"])
                                     {
                                         <a class="btn btn-default btn-xs btn--blue" href="@Url.Action("EditForm", "AddressBook", new { addressid = address.AddressId })">@Html.Translate("/AddressBook/Form/Label/Edit")</a>

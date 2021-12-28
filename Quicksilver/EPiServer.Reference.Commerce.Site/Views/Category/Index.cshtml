@@ -19,7 +19,7 @@
                         </div>
                     </div>
                 </div>
-                @Html.Partial("_ProductList", Model.ProductViewModels)
+                <partial name="_ProductList" model="Model.ProductViewModels" />
             </div>
             <input class="jsSearchPage" hidden id="FilterOption_Page" name="FilterOption.Page" type="text" value="@(Model.FilterOption.Page + 1)" />
             <input class="jsSelectedFacet" hidden id="FilterOption_SelectedFacet" name="FilterOption.SelectedFacet" type="text" />

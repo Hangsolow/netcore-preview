@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="jsPaymentMethod">
-                @{ Html.RenderPartial("Payment/_" + Model.SelectedPaymentMethod.PaymentMethod.SystemKeyword, Model.SelectedPaymentMethod.PaymentMethod); }
+                @{ await Html.RenderPartialAsync("Payment/_" + Model.SelectedPaymentMethod.PaymentMethod.SystemKeyword, Model.SelectedPaymentMethod.PaymentMethod); }
             </div>
         </div>
     </div>

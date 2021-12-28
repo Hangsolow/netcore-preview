@@ -2,7 +2,7 @@
 
 ---
 
-This repository is a preview providing early access to the latest Optimizely (formerly Episerver) product packages targeting .NET 5. Please use GitHub issues to provide feedback regarding any specific issues you have encountered when upgrading your add-ons or projects.
+This repository is a fork of https://github.com/episerver/netcore-preview intended to be a sample for dotnet 5 for use in blogposts and the like
 
 ## The solution
 
@@ -11,28 +11,6 @@ Use your user directory on Windows, or add Everyone to the folder where you crea
 `NOTE: Quicksilver has a default username and password of admin@example.com / Episerver123!`
 
 ---
-
-## NuGet package location
-
-This preview repository has a nuget.config with the location to the packages.  If you need to add your own nuget.config or update package sources, use the following location.
-  1.  https://pkgs.dev.azure.com/EpiserverEngineering/netCore/_packaging/beta-program/nuget/v3/index.json
-
----
-
-## Template installation
-
-```
-dotnet new -i EPiServer.Net.Templates::1.0.0-pre-020034 --nuget-source https://pkgs.dev.azure.com/EpiserverEngineering/netCore/_packaging/beta-program/nuget/v3/index.json --force
-```
----
-
-## CLI installation
-
-```
-dotnet tool install EPiServer.Net.Cli --global --add-source https://pkgs.dev.azure.com/EpiserverEngineering/netCore/_packaging/beta-program/nuget/v3/index.json --version 1.0.0-pre-020034
-```
----
-
 ## Create empty CMS site
 
 ```
@@ -74,7 +52,7 @@ To utilize legacy configuration sections you can install the `EPiServer.Cms.AspN
 
 ## Startup extensibility
 ### Program.cs
-EPiServer will by default use the built-in Dependency Injection framework (DI) in .NET 5. To connect the DI framework with EPiServer you need to call extension method `IHostBuilder.ConfigureCmsDefault()` in Program.cs. <br/>
+CMS 12 will by default use the built-in Dependency Injection framework (DI) in .NET 5. To connect the DI framework with EPiServer you need to call extension method `IHostBuilder.ConfigureCmsDefault()` in Program.cs. <br/>
 To configure the application (including EPiServer) to use another DI framework you should call the extension method `IHostBuilder.UseServiceProviderFactory`. The example below shows how to configure the application to use Autofac:
 
 ```
@@ -93,13 +71,6 @@ There are some added extensibility points when interacting with the Startup clas
 
 ---
 
-## Compiled views for shell modules
-
-For add-on developers, we have added a default location expander that will look for compiled views in a certain location or based on configuration value.
-  1.  /{ShellModuleName}/Views/
-  2.  The folder defined in the module.config viewFolder attribute on module element.
-
----
 
 ## Search & Navigation (formerly Find) preview
 
@@ -111,6 +82,6 @@ services.Configure<FindUIOptions>(x => x.ClientSideResourceBaseUrl = "https://st
 
 ---
 
-## Preview of documentation
+## documentation
 
-For a preview of the documentation for CMS 12, Commerce 14, and Search & Navigation 14, including Breaking changes, see the [.NET 5.0 preview documentation](https://world.episerver.com/documentation/developer-guides/optimizely-platform/-net-core-preview/ ".NET 5.0 preview documentation") on Optimizely World.
+For  the documentation for CMS 12, Commerce 14, and Search & Navigation 14, see the [.NET 5.0 documentation](https://world.optimizely.com/documentation/upgrading/optimizely-cms/cms-12/) on Optimizely World.

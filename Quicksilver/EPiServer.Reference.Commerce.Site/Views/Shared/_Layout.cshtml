@@ -62,7 +62,7 @@
 
     @if (ShouldRenderTrackingSection())
     {
-        @Html.Partial("_RecommendationsTemplates")
+        @await Html.PartialAsync("_RecommendationsTemplates")
         @RenderSection("Tracking", false)
     }
 

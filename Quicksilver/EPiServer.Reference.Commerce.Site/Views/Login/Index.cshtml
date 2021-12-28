@@ -9,8 +9,8 @@
         }
         else
         {
-            @Html.Partial("RegisterAccount", Model.RegisterAccountViewModel)
-            @Html.Partial("Login", Model.LoginViewModel)
+            <partial name="RegisterAccount" model="Model.RegisterAccountViewModel" />
+            <partial name="Login" model="Model.LoginViewModel" />
         }
     </div>
 </div>

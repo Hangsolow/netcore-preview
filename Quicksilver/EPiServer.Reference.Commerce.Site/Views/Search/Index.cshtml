@@ -14,11 +14,11 @@
     }
     else
     {
-        @Html.Partial("_Facet", Model.FilterOption)
+        @await Html.PartialAsync("_Facet", Model.FilterOption)
         using (Html.BeginForm("Index", "Search", FormMethod.Get, new { @class = "jsSearchForm" }))
         {
             <div class="col-md-9">
-                @Html.Partial("_ProductList", Model.ProductViewModels)
+                @await Html.PartialAsync("_ProductList", Model.ProductViewModels)
             </div>
             <input class="jsSearchPage" id="FilterOption_Page" name="FilterOption.Page" type="hidden" value="@(Model.FilterOption.Page + 1)" />
         }

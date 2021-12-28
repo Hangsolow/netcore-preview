@@ -1,17 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-  <Import Project="..\dependencies.props" />
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="BuildBundlerMinifier" Version="$(BuildBundlerMinifier)" />
-    <PackageReference Include="EPiServer.CMS" Version="$(CmsUIVersion)" />
-    <PackageReference Include="Wangkanai.Detection" Version="2.0.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\LanguageFiles\**\*" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="wwwroot\**\*.*" />
-  </ItemGroup>
+	<Import Project="..\dependencies.props" />
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<!-- disable warnings when overriding display templates -->
+		<NoWarn>$(NoWarn);0436</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+		<PackageReference Include="EPiServer.CMS" Version="12.2.1" />
+		<PackageReference Include="Wangkanai.Detection" Version="2.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\LanguageFiles\**\*" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="wwwroot\**\*.*" />
+	</ItemGroup>
 </Project>
